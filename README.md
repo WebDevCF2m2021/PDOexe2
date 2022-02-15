@@ -1,6 +1,6 @@
-# PDO exemple 2
+# PDOexe2
 
-## CRUD d'un article sur pdo_1
+## CRUD d'un article sur pdo_1 en équipe
 
 Nous allons utiliser un thème bootstrap:
 
@@ -10,7 +10,13 @@ https://bootswatch.com/lux/
 - Un admin dont le login est 'admin'
 - Un admin dont le mot de passe est '1234' 
 
-### Publique
+### Installer la DB
+Dans PhpMyAdmin installez (mariaDB):
+
+    datas\pdo_1_structure_datas.sql
+
+
+### Partie Publique
 
 #### homepage
 Que souhaite t'on voir ?
