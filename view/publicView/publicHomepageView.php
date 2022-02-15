@@ -33,7 +33,7 @@
       <ul class="navbar-nav ms-md-auto">
 
         <li class="nav-item">
-          <a target="_blank" rel="noopener" class="nav-link" href="?connect"> Connexion</a>
+          <a rel="noopener" class="nav-link" href="?connect"> Connexion</a>
         </li>
       </ul>
     </div>
