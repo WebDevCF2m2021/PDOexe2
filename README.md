@@ -20,9 +20,9 @@ Dans PhpMyAdmin installez (mariaDB):
 
 #### homepage
 Que souhaite t'on voir ?
-- Retour à l'accueil
-- Bouton connexion
+- Retour à l'accueil OK
+- Bouton connexion OK
 - Les articles avec l'auteur, la date, le titre et les sections et 250 caractères - par date décroissante (? pagination) - Au début on ne prendra que les 20 derniers -> lire la suite (idthearticle)
-- Le détail de l'article
+- Liens vers Le détail de l'article ()
 - Les rubriques cliquables avec les 20 derniers articles (thearticledate desc)
 - Le détail des utilisateurs et leurs 20 derniers articles (thearticledate desc)

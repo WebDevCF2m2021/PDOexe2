@@ -19,38 +19,18 @@
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
-     
+
         <li class="nav-item dropdown show">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >Section</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
           <div class="dropdown-menu" aria-labelledby="themes">
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something </a>
-            <a class="dropdown-item" href="#">1</a>
-            <a class="dropdown-item" href="#">2</a>
-            <a class="dropdown-item" href="#">3</a> 
-            <a class="dropdown-item" href="#">4</a>
-            <a class="dropdown-item" href="#">5</a>
-            <a class="dropdown-item" href="#">6</a>
-            <a class="dropdown-item" href="#">7</a>
-            <a class="dropdown-item" href="#">8</a>
-            <a class="dropdown-item" href="#">9</a>
-            <a class="dropdown-item" href="#">10</a>
-            <a class="dropdown-item" href="#">11</a>
-            <a class="dropdown-item" href="#">12</a>
-            <a class="dropdown-item" href="#">13</a>
-            <a class="dropdown-item" href="#">14</a>
-            <a class="dropdown-item" href="#">15</a>
-            <a class="dropdown-item" href="#">16</a>
-            <a class="dropdown-item" href="#">17</a>
-            <a class="dropdown-item" href="#">18</a>
-            <a class="dropdown-item" href="#">19</a>
-            <a class="dropdown-item" href="#">20</a>
-            <a class="dropdown-item" href="#">21</a>
-            <a class="dropdown-item" href="#">22</a>
-            <a class="dropdown-item" href="#">23</a>
-            <a class="dropdown-item" href="#">24</a>
+            <?php
+            foreach ($sections as $section) {
+            ?>
+              <a class="dropdown-item" href="?idsection=<?= $section['idthesection'] ?>"><?= $section['thesectiontitle'] ?></a>
+            <?php
+            }
+            ?>
+            <div class="dropdown-divider"></div>
           </div>
         </li>
       </ul>
@@ -101,16 +81,16 @@
   </div>
 
   <?php
-    //var_dump($articles);
-    foreach($articles as $article) {
+  //var_dump($articles);
+  foreach ($articles as $article) {
   ?>
     <h2><?= $article["thearticletitle"] ?></h2>
     <p><?= $article["thearticletext"] ?> <a href="?idarticle=<?= $article["idthearticle"] ?>">Lire la suite</a></p>
-    <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p> 
+    <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p>
     <p><?= $article["thearticledate"] ?></p>
     <p><?= $article["thesectiontitle"] ?></p>
   <?php
-    }
+  }
   ?>
 
   <?php
