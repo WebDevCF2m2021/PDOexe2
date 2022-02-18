@@ -4,7 +4,9 @@
 /**
  * Public Homepage
  */
+$sections = theSectionSelectAllNav($db);
 
+var_dump ($sections);
 
 //require_once "../view/publicView/publicHomepageView.php";
 
