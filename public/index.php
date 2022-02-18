@@ -23,7 +23,7 @@ try {
 $test = thearticleSelectAll($db);
 //var_dump(theSectionSelectAllNav($db));
 
-// var_dump($test);
+//var_dump($test);
 
 /**
  * Routeur
