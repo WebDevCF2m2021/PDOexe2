@@ -30,7 +30,10 @@ $test = thearticleSelectAll($db);
  */
 
 
-require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
+/**
+ * Nous ne sommes pas connectés
+ */
 
+require_once "../controller/publicThearticleController.php";
 
 //chargement Model

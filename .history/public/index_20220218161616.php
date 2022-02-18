@@ -29,7 +29,6 @@ $test = thearticleSelectAll($db);
  * Routeur
  */
 
-
 require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
 
 

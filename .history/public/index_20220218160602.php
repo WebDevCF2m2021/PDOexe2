@@ -29,8 +29,14 @@ $test = thearticleSelectAll($db);
  * Routeur
  */
 
+if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
+    require_once "../controller/adminThearticleController.php";
+} else {
+    /**
+     * Nous ne sommes pas connectés
+     */
 
-require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
-
+    require_once "../controller/publicThearticleController.php";
+}
 
 //chargement Model

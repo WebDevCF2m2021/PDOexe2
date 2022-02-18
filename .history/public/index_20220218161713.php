@@ -29,7 +29,8 @@ $test = thearticleSelectAll($db);
  * Routeur
  */
 
-
+if ($_SESSION["id"] !== session_id() || $_GET["disconnect"]) {
+}
 require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
 
 

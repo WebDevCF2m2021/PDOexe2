@@ -43,7 +43,7 @@
       <ul class="navbar-nav ms-md-auto">
 
         <li class="nav-item">
-          <a rel="noopener" class="nav-link" href="?connect"> Connexion</a>
+          <a rel="noopener" class="nav-link" href="?disconnect"> Déconnexion</a>
         </li>
       </ul>
     </div>

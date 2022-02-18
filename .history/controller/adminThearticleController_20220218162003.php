@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION["id"] !== session_id() || isset($_GET["disconnect"])) {
+if ($_SESSION["id"] !== session_id() || $_GET["disconnect"]) {
     $_SESSION = [];
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
