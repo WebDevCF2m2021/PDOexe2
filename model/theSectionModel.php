@@ -1,5 +1,5 @@
 <?php
-$tab = []
+$tab = [];
 try{
 $db = $theSectionSelectAllNav -> qurey 
     ("SELECT * idthesection,thesectiontitle 
