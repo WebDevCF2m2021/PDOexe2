@@ -3,15 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Bootswatch: Lux</title>
+  <title>Homepage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.min.css">
-
 </head>
 
 <body>
-
   <div class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
     <div class="container">
       <a href="./" class="navbar-brand">Accueil</a>
@@ -25,19 +23,20 @@
         <li class="nav-item dropdown show">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >Section</a>
           <div class="dropdown-menu" aria-labelledby="themes">
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something </a>
-             <a class="dropdown-item" href="#">1</a>
+            <a class="dropdown-item" href="#">1</a>
             <a class="dropdown-item" href="#">2</a>
             <a class="dropdown-item" href="#">3</a> 
             <a class="dropdown-item" href="#">4</a>
             <a class="dropdown-item" href="#">5</a>
             <a class="dropdown-item" href="#">6</a>
-             <a class="dropdown-item" href="#">7</a>
+            <a class="dropdown-item" href="#">7</a>
             <a class="dropdown-item" href="#">8</a>
             <a class="dropdown-item" href="#">9</a>
-             <a class="dropdown-item" href="#">10</a>
+            <a class="dropdown-item" href="#">10</a>
             <a class="dropdown-item" href="#">11</a>
             <a class="dropdown-item" href="#">12</a>
             <a class="dropdown-item" href="#">13</a>
@@ -52,8 +51,6 @@
             <a class="dropdown-item" href="#">22</a>
             <a class="dropdown-item" href="#">23</a>
             <a class="dropdown-item" href="#">24</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated</a>
           </div>
         </li>
       </ul>
