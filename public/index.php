@@ -20,7 +20,9 @@ try {
     echo "<br>Message d'erreur : " . $e->getMessage();
 }
 
-//var_dump($db);
+$test = thearticleSelectAll($db);
+
+// var_dump($test);
 
 /**
  * Routeur
