@@ -9,16 +9,40 @@
 </head>
 
 <body>
-  <div class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
     <div class="container">
       <a href="./" class="navbar-brand">Accueil</a>
       <ul class="navbar-nav me-auto">
-<br>
-    <div>
-        <a class="nav-link" href="?connect">
-            <h1>Connexion</h1>
-        </a>
-    </div>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-md-auto">
+</div>
+
+   </div>
+  <div class="container mt-4">
 
     <p class="lead">Veuillez vous connecter</p>
 
