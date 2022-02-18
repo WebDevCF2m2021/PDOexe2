@@ -21,13 +21,14 @@ try {
 }
 
 $test = thearticleSelectAll($db);
+//var_dump(theSectionSelectAllNav($db));
 
 // var_dump($test);
 
 /**
  * Routeur
  */
-require_once "../model/theSectionModel.php";
+
 
 /**
  * Nous ne sommes pas connectés
@@ -36,5 +37,3 @@ require_once "../model/theSectionModel.php";
 require_once "../controller/publicThearticleController.php";
 
 //chargement Model
-
-
