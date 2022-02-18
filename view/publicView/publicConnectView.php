@@ -10,13 +10,38 @@
 
 <body>
 
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
     <div class="container">
-                        <a  class="container" href="?connect"><h1>Connexion</h1></a>
+      <a href="./" class="navbar-brand">Accueil</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-md-auto">
+
+       
+      </ul>
     </div>
+  </div>
+
+  
                  
-                    <p class="container">Veuillez vous connecter</p>
                     
-                    <hr>
+                    
+                    <br>
+                    <p class="container">Veuillez vous connecter</p>
                     <div class="container">
                         <?php
                         if (isset($error)) :
