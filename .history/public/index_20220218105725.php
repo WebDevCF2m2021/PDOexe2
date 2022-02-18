@@ -18,8 +18,6 @@ try {
     echo "<br>Message d'erreur : " . $e->getMessage();
 }
 
-$test = thearticleSelectAll($db);
-
 //var_dump($db);
 
 /**

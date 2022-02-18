@@ -20,6 +20,7 @@ try {
 
 $test = thearticleSelectAll($db);
 
+var_dump($test);
 //var_dump($db);
 
 /**
@@ -30,4 +31,4 @@ $test = thearticleSelectAll($db);
  * Nous ne sommes pas connectés
  */
 
-require_once "../controller/publicThearticleController.php";
+//require_once "../controller/publicThearticleController.php";
