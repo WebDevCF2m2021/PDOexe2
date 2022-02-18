@@ -22,6 +22,7 @@ try {
 /**
  * Routeur
  */
+require_once "../model/theSectionModel.php";
 
 /**
  * Nous ne sommes pas connectés

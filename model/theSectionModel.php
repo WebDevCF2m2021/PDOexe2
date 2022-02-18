@@ -1,14 +1,15 @@
 <?php
-$tab = [];
-try{
-$db = $theSectionSelectAllNav -> query 
-    ("SELECT * idthesection,thesectiontitle 
-      FROM thesection
-      ORDER BY thesectiontitle ASC") ;
-     $result = $sth->fetchAll(); 
-}catch (Exception $e){
-    echo $tab. $e->getMessage();
+function theSectionSelectAllNav(PDO $db){
+    try{
+        $sth = $db -> query
+            ("SELECT idthesection,thesectiontitle 
+              FROM thesection
+              ORDER BY thesectiontitle ASC");
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+    }catch (Exception $e){
+        return [];
+    }
+    return $result;
 }
 
-
-?>
+var_dump (theSectionSelectAllNav($db));
