@@ -4,6 +4,7 @@
  * Chargement des dépendances
  */
 require_once "../config.php";
+require_once "../model/theArticleModel.php";
 
 /**
  * Connexion PDO
@@ -16,6 +17,8 @@ try {
     echo "Code erreur : " . $e->getCode();
     echo "<br>Message d'erreur : " . $e->getMessage();
 }
+
+$test = thearticleSelectAll($db);
 
 //var_dump($db);
 
