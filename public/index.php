@@ -4,7 +4,9 @@
  * Chargement des dépendances
  */
 require_once "../config.php";
+require_once "../model/theSectionModel.php";
 require_once "../model/theArticleModel.php";
+
 
 /**
  * Connexion PDO
@@ -31,3 +33,7 @@ $test = thearticleSelectAll($db);
  */
 
 require_once "../controller/publicThearticleController.php";
+
+//chargement Model
+
+
