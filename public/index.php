@@ -20,7 +20,7 @@ try {
 
 $test = thearticleSelectAll($db);
 
-//var_dump($db);
+// var_dump($test);
 
 /**
  * Routeur
