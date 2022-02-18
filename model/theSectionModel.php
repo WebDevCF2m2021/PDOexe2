@@ -1,12 +1,12 @@
 <?php
 $tab = [];
 try{
-$db = $theSectionSelectAllNav -> qurey 
+$db = $theSectionSelectAllNav -> query 
     ("SELECT * idthesection,thesectiontitle 
       FROM thesection
       ORDER BY thesectiontitle ASC") -> fetchall();
 }catch (Exception $e){
-    echo $tab. $e->getCode();
+    echo $tab. $e->getMessage();
 }
 
 
