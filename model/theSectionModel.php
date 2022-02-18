@@ -1,4 +1,5 @@
 <?php
+
 function theSectionSelectAllNav(PDO $db){
     try{
         $sth = $db -> query
@@ -13,3 +14,4 @@ function theSectionSelectAllNav(PDO $db){
 }
 
 var_dump (theSectionSelectAllNav($db));
+
