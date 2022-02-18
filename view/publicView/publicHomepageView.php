@@ -104,6 +104,19 @@
   </div>
 
   <?php
+    //var_dump($articles);
+    foreach($articles as $article) {
+  ?>
+    <h2><?= $article["thearticletitle"] ?></h2>
+    <p><?= $article["thearticletext"] ?> <a href="?idarticle=<?= $article["idthearticle"] ?>">Lire la suite</a></p>
+    <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p> 
+    <p><?= $article["thearticledate"] ?></p>
+    <p><?= $article["thesectiontitle"] ?></p>
+  <?php
+    }
+  ?>
+
+  <?php
   include 'footer.php';
   ?>
 

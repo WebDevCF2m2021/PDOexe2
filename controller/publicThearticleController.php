@@ -4,7 +4,7 @@
 /**
  * Public Homepage
  */
-
+$articles=thearticleSelectAll($db);
 
 //require_once "../view/publicView/publicHomepageView.php";
 
@@ -13,5 +13,4 @@ if (isset($_GET['connect'])) {
 
 else {
     require_once "../view/publicView/publicHomepageView.php";
-    }
-
+}
