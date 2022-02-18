@@ -3,21 +3,46 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connexion</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <div>
-                        <a class="nav-link" href="?connect"><h1>Connexion</h1></a>
-</div>
+<div class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+    <div class="container">
+      <a href="./" class="navbar-brand">Accueil</a>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-md-auto">
+
+       
+      </ul>
+    </div>
+  </div>
+
+  
                  
-                    <p class="lead">Veuillez vous connecter</p>
                     
-                    <hr>
-                    <div>
+                    
+                    <br>
+                    <p class="container">Veuillez vous connecter</p>
+                    <div class="container">
                         <?php
                         if (isset($error)) :
                         ?>
