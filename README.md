@@ -2,6 +2,11 @@
 
 ## CRUD d'un article sur pdo_1 en équipe
 
+## Lien vers le projet GIT
+
+https://github.com/WebDevCF2m2021/PDOexe2/projects/1
+
+
 Nous allons utiliser un thème bootstrap:
 
 https://bootswatch.com/lux/
