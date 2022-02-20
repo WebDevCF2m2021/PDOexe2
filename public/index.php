@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /**
  * Chargement des dépendances
  */
@@ -30,10 +30,4 @@ $test = thearticleSelectAll($db);
  */
 
 
-/**
- * Nous ne sommes pas connectés
- */
-
-require_once "../controller/publicThearticleController.php";
-
-//chargement Model
+require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
