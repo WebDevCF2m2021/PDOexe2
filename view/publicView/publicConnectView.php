@@ -21,15 +21,15 @@
           </a>
         </li>
         <li class="nav-item dropdown show">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >Section</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
           <div class="dropdown-menu" aria-labelledby="themes">
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something </a>
             <a class="dropdown-item" href="#">1</a>
             <a class="dropdown-item" href="#">2</a>
-            <a class="dropdown-item" href="#">3</a> 
+            <a class="dropdown-item" href="#">3</a>
             <a class="dropdown-item" href="#">4</a>
             <a class="dropdown-item" href="#">5</a>
             <a class="dropdown-item" href="#">6</a>
@@ -97,5 +97,5 @@
   </div>
 
   <?php
-  include 'footer.php';
+  include '../view/footer.php';
   ?>
