@@ -17,11 +17,19 @@ if (isset($_GET['connect'])) {
     } else {
         require_once "../view/publicView/publicConnectView.php";
     }
+}
+/*Créer un routing publique quand la variable GET idauteur existe*/
+elseif (isset($_GET['idauteur'])) {
+
+    require_once "../model/theuserModel.php"
+}
+
+    
 
     /**
      * Public Homepage
      */
-} else {
+ else {
     $articles = thearticleSelectAll($db);
     require_once "../view/publicView/publicHomepageView.php";
 }

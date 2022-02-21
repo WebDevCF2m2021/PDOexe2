@@ -6,6 +6,8 @@ session_start();
 require_once "../config.php";
 require_once "../model/theSectionModel.php";
 require_once "../model/theArticleModel.php";
+/*Charger le modèle sur le CF*/
+require_once "../model/theuserModel.php";
 
 
 /**

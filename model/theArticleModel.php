@@ -25,3 +25,22 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     }
     return $result;
 }
+/*Charger tous les articles (20 comme sur l'accueil) créez dans model\theArticleModel.php dans une fonction nommée thearticleSelectAllByIduser(PDO $db, int $id)*/
+
+function thearticleSelectAllByIduser(PDO $db, int $id, int $limit = 20, int $offset = 0) {
+
+    $query = "SELECT thearticletext
+    FROM thearticle
+    WHERE theuser_idtheuser = idtheuser
+    LIMIT $limit OFFSET $offset;";
+    try {
+    $prepare = $db->query($query);
+    $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+    $prepare->closeCursor();
+} catch (Exception $e) {
+
+    $result = [];
+}
+return $result;
+
+}
