@@ -34,12 +34,6 @@
           </div>
         </li>
       </ul>
-      <ul class="navbar-nav ms-md-auto">
-      </ul>
-      <ul class="navbar-nav ms-md-auto">
-
-
-      </ul>
     </div>
   </div>
 
