@@ -38,5 +38,5 @@ function thearticleSelectOneById(PDO $db, int $id) {
      }
     return $result;
 }
-
+//thearticleSelectOneById ($db);
 //var_dump (thearticleSelectOneById());
