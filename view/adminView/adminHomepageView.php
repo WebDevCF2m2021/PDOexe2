@@ -21,19 +21,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Créer un nouvel article</a>
+          <a class="nav-link" href="?add">Créer un nouvel article</a>
         </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
+
+
       </ul>
       <ul class="navbar-nav ms-md-auto">
 
@@ -51,9 +42,9 @@
       <div class="row">
         <div class="col-lg-8 col-md-7 col-sm-6">
           <h1>Gestion des articles</h1>
-        
+
         </div>
- 
+
       </div>
     </div>
 
@@ -64,7 +55,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            
+
 
           </div>
         </div>
