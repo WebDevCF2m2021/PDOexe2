@@ -16,47 +16,23 @@
       <a href="./" class="navbar-brand">Accueil</a>
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home
+          <a class="nav-link active" href="./">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item dropdown show">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
           <div class="dropdown-menu" aria-labelledby="themes">
+            <?php
+            foreach ($sections as $section) {
+            ?>
+              <a class="dropdown-item" href="?idsection=<?= $section['idthesection'] ?>"><?= $section['thesectiontitle'] ?></a>
+            <?php
+            }
+            ?>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something </a>
-            <a class="dropdown-item" href="#">1</a>
-            <a class="dropdown-item" href="#">2</a>
-            <a class="dropdown-item" href="#">3</a>
-            <a class="dropdown-item" href="#">4</a>
-            <a class="dropdown-item" href="#">5</a>
-            <a class="dropdown-item" href="#">6</a>
-            <a class="dropdown-item" href="#">7</a>
-            <a class="dropdown-item" href="#">8</a>
-            <a class="dropdown-item" href="#">9</a>
-            <a class="dropdown-item" href="#">10</a>
-            <a class="dropdown-item" href="#">11</a>
-            <a class="dropdown-item" href="#">12</a>
-            <a class="dropdown-item" href="#">13</a>
-            <a class="dropdown-item" href="#">14</a>
-            <a class="dropdown-item" href="#">15</a>
-            <a class="dropdown-item" href="#">16</a>
-            <a class="dropdown-item" href="#">17</a>
-            <a class="dropdown-item" href="#">18</a>
-            <a class="dropdown-item" href="#">19</a>
-            <a class="dropdown-item" href="#">20</a>
-            <a class="dropdown-item" href="#">21</a>
-            <a class="dropdown-item" href="#">22</a>
-            <a class="dropdown-item" href="#">23</a>
-            <a class="dropdown-item" href="#">24</a>
           </div>
         </li>
-      </ul>
-      <ul class="navbar-nav ms-md-auto">
-
-
       </ul>
     </div>
   </div>
@@ -66,7 +42,7 @@
 
 
   <br>
-  <p class="container">Veuillez vous connecter</p>
+  <p class="container h1">Veuillez vous connecter</p>
   <div class="container">
     <?php
     if (isset($error)) :
