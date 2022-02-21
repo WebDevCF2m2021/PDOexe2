@@ -12,7 +12,17 @@ if ($_SESSION["id"] !== session_id() || isset($_GET["disconnect"])) {
  * Ajout - Crud
  */
 if (isset($_GET['add'])) {
-
+    /* A remplir quand j'aurais les champs de la vue */
+    if (isset($_POST[""]) && isset($_POST[""]) && isset($_POST[""]) && isset($_POST[""])) {
+        $title = userEntryProtection($_POST[""]);
+        $text = userEntryProtection($_POST[""]);
+        $user = (int) ($_POST[""]);
+        $sections = [];
+        foreach ($_POST[""] as $section) {
+            array_push($sections, (int) $section);
+        }
+        thearticleInsert($db, $title, $text, $user, $sections);
+    }
 
 
 
