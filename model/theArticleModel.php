@@ -17,7 +17,7 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     ORDER BY a.thearticledate DESC
     LIMIT $limit OFFSET $offset;";
     try {
-        $prepare = $db->query($query);
+        $prepare = $db->prepare($query);
         $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
         $prepare->closeCursor();
     } catch (Exception $e) {
@@ -25,3 +25,18 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     }
     return $result;
 }
+
+
+function thearticleSelectOneById(PDO $db, int $id) {
+     try{
+        $queryA = "SELECT `idthearticle`,`thearticletitle`,`thearticletext`,`thearticledate`,`idtheuser` FROM `thearticle` INNER join theuser ON `theuser_idtheuser`= `idtheuser` INNER join thearticle_has_thesection ON `thesection_idthesection`=`thesection_idthesection`";
+        $stmt = $db->prepare($queryA);
+        $resultA = $prepareA->fetchAll(PDO::FETCH_ASSOC);
+     }
+     catch(Exception $e){
+        $resultA = [];
+     }
+    return $result;
+}
+
+//var_dump (thearticleSelectOneById());
