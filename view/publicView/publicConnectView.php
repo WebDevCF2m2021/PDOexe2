@@ -66,7 +66,7 @@
 
 
   <br>
-  <p class="container">Veuillez vous connecter</p>
+  <p class="container h1">Veuillez vous connecter</p>
   <div class="container">
     <?php
     if (isset($error)) :
