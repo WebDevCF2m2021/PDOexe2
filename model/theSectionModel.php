@@ -17,15 +17,17 @@ Elle va charger tous les champs de la table thesection quand l'idthesection vaut
 Requête préparée, renvoie un tableau associatif si réussi, un tableau vide en cas d'échec*/
 
 
+
 function thesectionSelectOneById(PDO $db, int $id)
 {
     try {
         $sth = $db->query("SELECT * 
-              FROM thesection
-              WHERE idsection BETWEEN 0 and 1");
+               FROM thesection
+               WHERE idsection BETWEEN 0 and 1");
         $result = $sth->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         return [];
     }
-    return $result;
+
 }
+public PDO::prepare(string $query, array $options = []): PDOStatement|false
