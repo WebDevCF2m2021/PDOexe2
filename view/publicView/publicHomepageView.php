@@ -50,36 +50,23 @@
       <div class="row">
         <div class="col-lg-8 col-md-7 col-sm-6">
           <h1>Articles de notre site</h1>
-          <p class="lead">A touch of class</p>
+          
         </div>
-        <div class="col-lg-4 col-md-5 col-sm-6">
-          <div class="sponsor">
-            test
-          </div>
-        </div>
+        
       </div>
     </div>
 
   </div>
 
   <div class="container mt-4">
-    <div class="bs-docs-section">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="page-header">
-            <h1 id="containers">Containers</h1>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <div class="row">
       <div class="col-lg-12">
-        <h2>List groups</h2>
+        <h2>count($articles)</h2>
       </div>
     </div>
   </div>
-
+<div class="container mx-30">
   <?php
   //var_dump($articles);
   foreach ($articles as $article) {
@@ -92,6 +79,7 @@
   <?php
   }
   ?>
+  </div>
 
   <?php
   include '../view/footer.php';
