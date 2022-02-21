@@ -1,8 +1,6 @@
 <?php
 if ($_SESSION["id"] !== session_id() || isset($_GET["disconnect"])) {
     disconnect();
-    header("Location: ./");
-    exit();
 }
 /**
  * Routeur de l'admin

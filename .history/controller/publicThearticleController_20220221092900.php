@@ -15,7 +15,6 @@ if (isset($_GET['connect'])) {
         if (connectionVerify($_POST["theuserLogin"], $_POST["theuserPwd"], ADMIN_LOG, ADMIN_PWD)) {
             header("Location: ./");
         } else {
-            $error = "Mot de passe ou login invalid!";
             require_once "../view/publicView/publicConnectView.php";
         }
     } else {
