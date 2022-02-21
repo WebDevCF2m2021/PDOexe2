@@ -50,35 +50,36 @@
       <div class="row">
         <div class="col-lg-8 col-md-7 col-sm-6">
           <h1>Articles de notre site</h1>
-          
+
         </div>
-        
+
       </div>
     </div>
 
   </div>
 
   <div class="container mt-4">
-    
+
     <div class="row">
       <div class="col-lg-12">
-        <h2>count($articles)</h2>
+        <h2>Nombre d'articles : <?= count($articles) ?></h2>
+        <hr>
       </div>
     </div>
   </div>
-<div class="container mx-30">
-  <?php
-  //var_dump($articles);
-  foreach ($articles as $article) {
-  ?>
-    <h2><?= $article["thearticletitle"] ?></h2>
-    <p><?= $article["thearticletext"] ?> <a href="?idarticle=<?= $article["idthearticle"] ?>">Lire la suite</a></p>
-    <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p>
-    <p><?= $article["thearticledate"] ?></p>
-    <p><?= $article["thesectiontitle"] ?></p>
-  <?php
-  }
-  ?>
+  <div class="container mx-30">
+    <?php
+    //var_dump($articles);
+    foreach ($articles as $article) {
+    ?>
+      <h2><?= $article["thearticletitle"] ?></h2>
+      <p><?= $article["thearticletext"] ?> <a href="?idarticle=<?= $article["idthearticle"] ?>">Lire la suite</a></p>
+      <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p>
+      <p><?= $article["thearticledate"] ?></p>
+      <p><?= $article["thesectiontitle"] ?></p>
+    <?php
+    }
+    ?>
   </div>
 
   <?php
