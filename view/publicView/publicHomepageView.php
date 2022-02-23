@@ -89,10 +89,10 @@
     <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p>
     <p><?= $article["thearticledate"] ?></p>
     <p><?php $artExp = explode("|||", $article["thesectiontitle"]);
-    print_r($artExp);
-    foreach ($artExp as $value){
+             $idExp = explode(",", $article["idthesection"]);
+    foreach ($artExp as $key => $value){
     ?>
-    <p><a href="?idsection=<?= $article["idthesection"] ?>"><?= $value?></a> </p><?php
+    <p><a href="?idsection=<?= $idExp[$key] ?>"><?= $value ?></a> </p><?php
     } ?></p>
   <?php
   }
