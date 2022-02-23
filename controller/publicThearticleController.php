@@ -16,7 +16,19 @@ if (isset($_GET['connect'])) {
         header("Location: ./");
     } else {
         require_once "../view/publicView/publicConnectView.php";
-    }
+    } 
+
+/**
+ * publicDetailArticle
+ * 
+ */
+}
+elseif (isset($_GET['idarticle']))
+{
+    require_once "../view/publicView/pubicDetailArticle.php";
+}
+
+
 
     /**
      * Public Homepage
@@ -25,3 +37,8 @@ if (isset($_GET['connect'])) {
     $articles = thearticleSelectAll($db);
     require_once "../view/publicView/publicHomepageView.php";
 }
+
+
+/*
+
+*/
