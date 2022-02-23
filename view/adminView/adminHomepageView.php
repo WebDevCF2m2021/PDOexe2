@@ -6,7 +6,7 @@
   <title>Bootswatch: Lux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="css/custom.min.css">
 </head>
 
 <body>
@@ -67,12 +67,3 @@
   <?php
   include '../view/footer.php';
   ?>
-
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
