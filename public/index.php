@@ -35,4 +35,13 @@ $test = thearticleSelectAll($db);
  */
 
 
-require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
+// require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
+// remise a l etat simple de la ternaire faite par Quentin ( qui etait tres belle ) 
+if(isset($_SESSION["id"]) && $_SESSION["id"] === session_id()){
+    require_once "../controller/admin/ThearticleController.php";
+
+ }
+ else{
+
+    require_once "../controller/public/ThearticleController.php";
+ }

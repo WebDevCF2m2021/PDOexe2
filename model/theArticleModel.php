@@ -26,22 +26,22 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     return $result;
 }
 
-function thearticleInsert(PDO $db, array ...$elements)
+function thearticleInsert(PDO $db, array ...$elements) // creation de fonction  'thearticleInsert'
 {
-    $title = userEntryProtection($elements[""]);
+    $title = userEntryProtection($elements[""]); //  ($elements[""]) = parametre de la fonction userEntryProtection
     $text = userEntryProtection($elements[""]);
     $user = (int) $elements[""];
-    $sections = [];
-    foreach ($elements[""] as $section) {
-        array_push($sections, (int) $section);
+    $sections = []; 
+    foreach ($elements[""] as $section) {  // boucle foreach donc utiliser avec un "tableau"
+        array_push($sections, (int) $section); // on push dans le tableau en s assurant que c'est des int.
     }
-    try {
+    try { 
         $db->beginTransaction();
-        $prepare = $db->prepare("INSERT INTO thearticle (thearticletitle,thearticletext,theuser_idtheuser) VALUES (?,?,?);");
-        $prepare->bindParam(1, $title, PDO::PARAM_STR);
-        $prepare->bindParam(2, $text, PDO::PARAM_STR);
-        $prepare->bindParam(3, $user, PDO::PARAM_INT);
-        $prepare->execute();
+        $prepare = $db->prepare("INSERT INTO thearticle (thearticletitle,thearticletext,theuser_idtheuser) VALUES (?,?,?);"); // preparation de la requete
+        $prepare->bindParam(1, $title, PDO::PARAM_STR);  // 1er     
+        $prepare->bindParam(2, $text, PDO::PARAM_STR);   // 2eme  parametre
+        $prepare->bindParam(3, $user, PDO::PARAM_INT);   // 3eme
+        $prepare->execute();  // on l execute
 
         $id = $db->lastInsertId();
         foreach ($sections as $section) {
@@ -52,7 +52,7 @@ function thearticleInsert(PDO $db, array ...$elements)
         }
 
         $db->commit();
-    } catch (Exception $e) {
+    } catch (Exception $e) { // on capture les erreurs
         $db->rollBack();
         die($e->getMessage());
     }
