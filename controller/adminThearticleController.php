@@ -21,7 +21,9 @@ if (isset($_GET['add'])) {
         foreach ($_POST["idthesection"] as $section) {
             array_push($sections, (int) $section);
         }
-        thearticleInsert($db, $title, $text, $user, $sections);
+        if (thearticleInsert($db, $title, $text, $user, $sections)) {
+            header("Location: ./");
+        }
     }
 
     $users = theuserSelectAll($db);
