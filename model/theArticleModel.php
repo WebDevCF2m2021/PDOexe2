@@ -26,13 +26,13 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     return $result;
 }
 
-function thearticleInsert(PDO $db, array ...$elements)
+function thearticleInsert(PDO $db, array $elements)
 {
-    $title = userEntryProtection($elements[""]);
-    $text = userEntryProtection($elements[""]);
-    $user = (int) $elements[""];
+    $title = userEntryProtection($elements["thearticletitle"]);
+    $text = userEntryProtection($elements["thearticletext"]);
+    $user = (int) $elements["theuser_idtheuser"];
     $sections = [];
-    foreach ($elements[""] as $section) {
+    foreach ($elements["idthesection"] as $section) {
         array_push($sections, (int) $section);
     }
     try {
