@@ -25,6 +25,11 @@ if (isset($_GET['add'])) {
     }
 
 
+require_once "../view/adminView/adminInsertView.php";
+    
+    
+
+
 
     /**
      * Modification - crUd
