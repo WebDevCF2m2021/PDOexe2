@@ -26,15 +26,8 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     return $result;
 }
 
-function thearticleInsert(PDO $db, array $elements)
+function thearticleInsert(PDO $db, string $title, string $text, int $user, array $sections)
 {
-    $title = userEntryProtection($elements["thearticletitle"]);
-    $text = userEntryProtection($elements["thearticletext"]);
-    $user = (int) $elements["theuser_idtheuser"];
-    $sections = [];
-    foreach ($elements["idthesection"] as $section) {
-        array_push($sections, (int) $section);
-    }
     try {
         $db->beginTransaction();
         $prepare = $db->prepare("INSERT INTO thearticle (thearticletitle,thearticletext,theuser_idtheuser) VALUES (?,?,?);");

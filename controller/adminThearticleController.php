@@ -21,7 +21,7 @@ if (isset($_GET['add'])) {
         foreach ($_POST["idthesection"] as $section) {
             array_push($sections, (int) $section);
         }
-        thearticleInsert($db, ["thearticletitle" => $title, "thearticletext" => $text, "theuser_idtheuser" => $user, "idthesection" => $sections]);
+        thearticleInsert($db, $title, $text, $user, $sections);
     }
 
     $users = theuserSelectAll($db);
