@@ -45,12 +45,12 @@ iframe {
 .dropdown-menu.show[aria-labelledby="themes"] {
   display: -ms-flexbox;
   display: flex;
-  width: 420px;
+  width: 600px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .dropdown-menu.show[aria-labelledby="themes"] .dropdown-item {
-  width: 33.333%;
+  width: auto;
 }
 .dropdown-menu.show[aria-labelledby="themes"] .dropdown-item:first-child {
   width: 100%;

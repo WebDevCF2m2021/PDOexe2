@@ -21,24 +21,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="?add">Créer un nouvel article</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
+
+
       </ul>
       <ul class="navbar-nav ms-md-auto">
 
@@ -55,14 +41,10 @@
     <div class="page-header" id="banner">
       <div class="row">
         <div class="col-lg-8 col-md-7 col-sm-6">
-          <h1>Articles de notre site</h1>
-          <p class="lead">A touch of class</p>
+          <h1>Gestion des articles</h1>
+
         </div>
-        <div class="col-lg-4 col-md-5 col-sm-6">
-          <div class="sponsor">
-            test
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -73,17 +55,13 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            <h1 id="containers">Containers</h1>
+
 
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <h2>List groups</h2>
-      </div>
-    </div>
+
   </div>
 
   <?php
