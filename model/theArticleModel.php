@@ -28,15 +28,32 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
 
 
 function thearticleSelectOneById(PDO $db, int $id) {
-     try{
-        $queryA = "SELECT `idthearticle`,`thearticletitle`,`thearticletext`,`thearticledate`,`idtheuser` FROM `thearticle` INNER join theuser ON `theuser_idtheuser`= `idtheuser` INNER join thearticle_has_thesection ON `thesection_idthesection`=`thesection_idthesection`";
+     
+        $queryA = "SELECT a.idthearticle,a.thearticletitle,a.thearticletext,a.thearticledate,
+        u.idtheuser, u.theusername, u.theuserlogin,
+        GROUP_CONCAT(s.idthesection) AS idthesection,
+        GROUP_CONCAT(s.thesectiontitle SEPARATOR '|||') AS thesectiontitle
+            FROM thearticle a
+        INNER JOIN theuser u
+            ON a.theuser_idtheuser = u.idtheuser 
+        INNER JOIN thearticle_has_thesection ahs
+            ON a.idthearticle = ahs.thearticle_idthearticle
+        INNER JOIN thesection s
+            ON ahs.thesection_idthesection = s.idthesection
+        WHERE a.idthearticle = ?
+            GROUP BY a.idthearticle
+        ";
         $stmt = $db->prepare($queryA);
-        $resultA = $prepareA->fetchAll(PDO::FETCH_ASSOC);
+    try{
+        $stmt->execute([$id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
      }
      catch(Exception $e){
-        $resultA = [];
+         echo $e->getMessage();
+        $result = [];
      }
     return $result;
 }
 //thearticleSelectOneById ($db);
 //var_dump (thearticleSelectOneById());
+

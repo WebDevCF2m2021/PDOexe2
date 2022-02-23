@@ -20,8 +20,10 @@ try {
     echo "<br>Message d'erreur : " . $e->getMessage();
 }
 
-$test = thearticleSelectAll($db);
+// $test = thearticleSelectAll($db);
 //var_dump(theSectionSelectAllNav($db));
+
+// var_dump (thearticleSelectOneById($db,15));
 
 //var_dump($test);
 

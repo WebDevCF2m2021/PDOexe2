@@ -25,3 +25,7 @@ if (isset($_GET['connect'])) {
     $articles = thearticleSelectAll($db);
     require_once "../view/publicView/publicHomepageView.php";
 }
+
+if (isset($_GET["idarticle"])){
+        
+}
