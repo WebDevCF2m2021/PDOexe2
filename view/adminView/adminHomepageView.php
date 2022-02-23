@@ -21,19 +21,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Créer un nouvel article</a>
+          <a class="nav-link" href="?add">Créer un nouvel article</a>
         </li>
         
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
+        
       </ul>
       <ul class="navbar-nav ms-md-auto">
 
@@ -64,16 +55,50 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            
-
           </div>
         </div>
       </div>
     </div>
 
   </div>
+  <?php
+  //if (!empty($thearticle)){
+  ?>
+      <table>
+        <thead>
+          <tr>
+              <th>idthearticle</th>
+              <th>thearticletitle</th>
+              <th>thearticletext</th>
+              <th>thearticledate</th>
+              <th>Modifier</th>
+              <th>Supprimer</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($thearticletext as $thearticle) {
+           ?>
+            <tr> 
+              <td><?= $thearticle["idthearticle"]?></td>
+              <td><?= $thearticle["thearticletitle"]?></td>
+              <td><?= $thearticle["thearticletext"]?></td>
+              <td><?= $thearticle["thearticledate"]?></td>
+              <td><?= $thearticle["thearticledesc"]?></td>
+              <td><a href="./?update=<?= $thearticle["idthearticle"] ?>"></a>Modifier</td>
+              <td><a href="./?delete=<?= $thearticle["idthearticle"] ?>"></a>>Supprimer</td>
+            </tr>
+          <?php
+          }
+          ?>
+        </tbody>
+      </table>
+
+  
 
   <?php
+   // }
   include '../view/footer.php';
   ?>
 

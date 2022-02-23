@@ -25,3 +25,4 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     }
     return $result;
 }
+<?php
