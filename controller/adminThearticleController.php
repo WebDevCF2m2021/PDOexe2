@@ -25,7 +25,8 @@ if (isset($_GET['add'])) {
     }
 
 
-
+    $users = theuserSelectAll($db);
+    $sections = theSectionSelectAllNav($db);
     /**
      * Modification - crUd
      */
