@@ -4,6 +4,7 @@ session_start();
  * Chargement des dépendances
  */
 require_once "../config.php";
+require_once "../model/theuserModel.php";
 require_once "../model/connectionModel.php";
 require_once "../model/theSectionModel.php";
 require_once "../model/theArticleModel.php";
