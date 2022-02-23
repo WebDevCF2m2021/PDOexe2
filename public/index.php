@@ -36,4 +36,11 @@ try {
 
 
 
-require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
+// require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
+// remise a l'état simple de la ternaire faite par Quentin ( qui était tres belle ) 
+if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
+    require_once "../controller/adminThearticleController.php";
+} else {
+
+    require_once "../controller/publicThearticleController.php";
+}

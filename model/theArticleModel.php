@@ -26,15 +26,17 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     return $result;
 }
 
+
+// creation de fonction  'thearticleInsert'  
 function thearticleInsert(PDO $db, string $title, string $text, int $user, array $sections)
 {
     try {
         $db->beginTransaction();
-        $prepare = $db->prepare("INSERT INTO thearticle (thearticletitle,thearticletext,theuser_idtheuser) VALUES (?,?,?);");
-        $prepare->bindParam(1, $title, PDO::PARAM_STR);
-        $prepare->bindParam(2, $text, PDO::PARAM_STR);
-        $prepare->bindParam(3, $user, PDO::PARAM_INT);
-        $prepare->execute();
+        $prepare = $db->prepare("INSERT INTO thearticle (thearticletitle,thearticletext,theuser_idtheuser) VALUES (?,?,?);"); // preparation de la requete
+        $prepare->bindParam(1, $title, PDO::PARAM_STR);  // 1er     
+        $prepare->bindParam(2, $text, PDO::PARAM_STR);   // 2eme  parametre
+        $prepare->bindParam(3, $user, PDO::PARAM_INT);   // 3eme
+        $prepare->execute();  // on l execute
 
         $id = $db->lastInsertId();
         foreach ($sections as $section) {
@@ -45,7 +47,7 @@ function thearticleInsert(PDO $db, string $title, string $text, int $user, array
         }
 
         $db->commit();
-    } catch (Exception $e) {
+    } catch (Exception $e) { // on capture les erreurs
         $db->rollBack();
         die($e->getMessage());
     }
