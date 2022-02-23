@@ -23,9 +23,24 @@ if (isset($_GET['connect'])) {
     }
 
     /**
+     * publicDetailArticle
+     * 
+     */
+} elseif (isset($_GET['idarticle'])) {
+    require_once "../view/publicView/publicDetailArticle.php";
+
+
+
+
+    /**
      * Public Homepage
      */
 } else {
     $articles = thearticleSelectAll($db);
     require_once "../view/publicView/publicHomepageView.php";
 }
+
+
+/*
+
+*/

@@ -8,7 +8,6 @@ require_once "../model/theuserModel.php";
 require_once "../model/connectionModel.php";
 require_once "../model/theSectionModel.php";
 require_once "../model/theArticleModel.php";
-require_once "../model/theuserModel.php";
 
 
 /**
@@ -23,25 +22,28 @@ try {
     echo "<br>Message d'erreur : " . $e->getMessage();
 }
 
-$test = thearticleSelectAll($db);
+
 //var_dump(theSectionSelectAllNav($db));
 
 //var_dump(theuserSelectAll($db));
 
-//var_dump($test);
+//var_dump(thearticleSelectAll($db));
+
 
 /**
  * Routeur
  */
 
 
+
 // require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
-// remise a l etat simple de la ternaire faite par Quentin ( qui etait tres belle ) 
+// remise a l'état simple de la ternaire faite par Quentin ( qui était tres belle ) 
 if(isset($_SESSION["id"]) && $_SESSION["id"] === session_id()){
-    require_once "../controller/admin/ThearticleController.php";
+    require_once "../controller/admin/adminThearticleController.php";
 
  }
  else{
 
-    require_once "../controller/public/ThearticleController.php";
+    require_once "../controller/public/publicThearticleController.php";
  }
+

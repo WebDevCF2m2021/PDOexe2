@@ -26,16 +26,11 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     return $result;
 }
 
-function thearticleInsert(PDO $db, array ...$elements) // creation de fonction  'thearticleInsert'
+
+// creation de fonction  'thearticleInsert'  
+function thearticleInsert(PDO $db, string $title, string $text, int $user, array $sections)
 {
-    $title = userEntryProtection($elements[""]); //  ($elements[""]) = parametre de la fonction userEntryProtection
-    $text = userEntryProtection($elements[""]);
-    $user = (int) $elements[""];
-    $sections = []; 
-    foreach ($elements[""] as $section) {  // boucle foreach donc utiliser avec un "tableau"
-        array_push($sections, (int) $section); // on push dans le tableau en s assurant que c'est des int.
-    }
-    try { 
+    try {
         $db->beginTransaction();
         $prepare = $db->prepare("INSERT INTO thearticle (thearticletitle,thearticletext,theuser_idtheuser) VALUES (?,?,?);"); // preparation de la requete
         $prepare->bindParam(1, $title, PDO::PARAM_STR);  // 1er     

@@ -67,6 +67,7 @@
       </div>
     </div>
   </div>
+
   <div class="container mx-30">
     <?php
     //var_dump($articles);
@@ -76,7 +77,17 @@
       <p><?= $article["thearticletext"] ?> <a href="?idarticle=<?= $article["idthearticle"] ?>">Lire la suite</a></p>
       <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p>
       <p><?= $article["thearticledate"] ?></p>
-      <p><?= $article["thesectiontitle"] ?></p>
+      <p>
+        <?php
+        $artExp = explode("|||", $article["thesectiontitle"]);
+        $idExp = explode(",", $article["idthesection"]);
+        foreach ($artExp as $key => $value) {
+        ?>
+          <a href="?idsection=<?= $idExp[$key] ?>"><?= $value ?></a>
+        <?php
+        }
+        ?>
+      </p>
     <?php
     }
     ?>
