@@ -25,3 +25,36 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
     }
     return $result;
 }
+
+function thearticleInsert(PDO $db, array ...$elements)
+{
+    $title = userEntryProtection($elements[""]);
+    $text = userEntryProtection($elements[""]);
+    $user = (int) $elements[""];
+    $sections = [];
+    foreach ($elements[""] as $section) {
+        array_push($sections, (int) $section);
+    }
+    try {
+        $db->beginTransaction();
+        $prepare = $db->prepare("INSERT INTO thearticle (thearticletitle,thearticletext,theuser_idtheuser) VALUES (?,?,?);");
+        $prepare->bindParam(1, $title, PDO::PARAM_STR);
+        $prepare->bindParam(2, $text, PDO::PARAM_STR);
+        $prepare->bindParam(3, $user, PDO::PARAM_INT);
+        $prepare->execute();
+
+        $id = $db->lastInsertId();
+        foreach ($sections as $section) {
+            $prepare = $db->prepare("INSERT INTO `thearticle_has_thesection`(`thearticle_idthearticle`, `thesection_idthesection`) VALUES (?,?)");
+            $prepare->bindParam(1, $id, PDO::PARAM_INT);
+            $prepare->bindParam(2, $section, PDO::PARAM_INT);
+            $prepare->execute();
+        }
+
+        $db->commit();
+    } catch (Exception $e) {
+        $db->rollBack();
+        die($e->getMessage());
+    }
+    return true;
+}
