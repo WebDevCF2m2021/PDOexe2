@@ -8,6 +8,8 @@ require_once "../model/theuserModel.php";
 require_once "../model/connectionModel.php";
 require_once "../model/theSectionModel.php";
 require_once "../model/theArticleModel.php";
+/*Charger le modèle sur le CF*/
+require_once "../model/theuserModel.php";
 
 
 /**
@@ -23,7 +25,7 @@ try {
 }
 
 
-var_dump (thearticleSelectOneById($db,15));
+//var_dump (thearticleSelectOneById($db,15));
 //var_dump(theSectionSelectAllNav($db));
 
 //var_dump(theuserSelectAll($db));
@@ -37,7 +39,6 @@ var_dump (thearticleSelectOneById($db,15));
  */
 
 
-
 // require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
 // remise a l'état simple de la ternaire faite par Quentin ( qui était tres belle ) 
 if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
@@ -46,3 +47,4 @@ if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
 
     require_once "../controller/publicThearticleController.php";
 }
+
