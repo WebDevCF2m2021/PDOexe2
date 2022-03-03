@@ -28,6 +28,35 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
 
 
 
+function thearticleSelectOneById(PDO $db, int $id) {
+     
+        $queryA = "SELECT a.idthearticle,a.thearticletitle,a.thearticletext,a.thearticledate,
+        u.idtheuser, u.theusername, u.theuserlogin,
+        GROUP_CONCAT(s.idthesection) AS idthesection,
+        GROUP_CONCAT(s.thesectiontitle SEPARATOR '|||') AS thesectiontitle
+            FROM thearticle a
+        INNER JOIN theuser u
+            ON a.theuser_idtheuser = u.idtheuser 
+        INNER JOIN thearticle_has_thesection ahs
+            ON a.idthearticle = ahs.thearticle_idthearticle
+        INNER JOIN thesection s
+            ON ahs.thesection_idthesection = s.idthesection
+        WHERE a.idthearticle = ?
+            GROUP BY a.idthearticle
+        ";
+        $stmt = $db->prepare($queryA);
+    try{
+        $stmt->execute([$id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+     }
+     catch(Exception $e){
+         echo $e->getMessage();
+        $result = [];
+     }
+    return $result;
+}
+
+
 // creation de fonction  'thearticleInsert'  
 function thearticleInsert(PDO $db, string $title, string $text, int $user, array $sections)
 {
@@ -71,3 +100,4 @@ function thearticleAdminSelectAll(PDO $db, int $substr = 200, int $limit = 20, i
     }
     return $result;
 }
+

@@ -23,11 +23,13 @@ try {
 }
 
 
+var_dump (thearticleSelectOneById($db,15));
 //var_dump(theSectionSelectAllNav($db));
 
 //var_dump(theuserSelectAll($db));
 
 //var_dump(thearticleSelectAll($db));
+
 
 
 /**

@@ -41,6 +41,3 @@ if (isset($_GET['connect'])) {
 }
 
 
-/*
-
-*/
