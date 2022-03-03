@@ -4,6 +4,7 @@ session_start();
  * Chargement des dépendances
  */
 require_once "../config.php";
+require_once "../model/theuserModel.php";
 require_once "../model/connectionModel.php";
 require_once "../model/theSectionModel.php";
 require_once "../model/theArticleModel.php";
@@ -21,14 +22,25 @@ try {
     echo "<br>Message d'erreur : " . $e->getMessage();
 }
 
-$test = thearticleSelectAll($db);
+
 //var_dump(theSectionSelectAllNav($db));
 
-//var_dump($test);
+//var_dump(theuserSelectAll($db));
+
+//var_dump(thearticleSelectAll($db));
+
 
 /**
  * Routeur
  */
 
 
-require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
+
+// require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
+// remise a l'état simple de la ternaire faite par Quentin ( qui était tres belle ) 
+if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
+    require_once "../controller/adminThearticleController.php";
+} else {
+
+    require_once "../controller/publicThearticleController.php";
+}

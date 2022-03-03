@@ -6,7 +6,7 @@
   <title>Bootswatch: Lux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="css/custom.min.css">
 </head>
 
 <body>
@@ -23,8 +23,7 @@
         <li class="nav-item">
           <a class="nav-link" href="?add">Créer un nouvel article</a>
         </li>
-        
-        
+
       </ul>
       <ul class="navbar-nav ms-md-auto">
 
@@ -42,9 +41,9 @@
       <div class="row">
         <div class="col-lg-8 col-md-7 col-sm-6">
           <h1>Gestion des articles</h1>
-        
+
         </div>
- 
+
       </div>
     </div>
 
@@ -55,6 +54,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
+
           </div>
         </div>
       </div>
@@ -101,12 +101,3 @@
    // }
   include '../view/footer.php';
   ?>
-
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
