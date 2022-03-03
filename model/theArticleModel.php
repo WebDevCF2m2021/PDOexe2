@@ -55,3 +55,19 @@ function thearticleInsert(PDO $db, string $title, string $text, int $user, array
     return true;
 }
 
+function thearticleAdminSelectAll(PDO $db, int $substr = 200, int $limit = 20, int $offset = 0)
+{
+    $query = "SELECT 
+    a.idthearticle,a.thearticletitle, SUBSTR(a.thearticletext,1,$substr) as thearticletext,a.thearticledate 
+    FROM thearticle a 
+    ORDER BY a.thearticledate DESC
+    LIMIT $limit OFFSET $offset;";
+    try {
+        $prepare = $db->query($query);
+        $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        $prepare->closeCursor();
+    } catch (Exception $e) {
+        $result = [];
+    }
+    return $result;
+}

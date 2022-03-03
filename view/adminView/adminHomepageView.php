@@ -64,40 +64,39 @@
   <?php
   //if (!empty($thearticle)){
   ?>
-      <table>
-        <thead>
-          <tr>
-              <th>idthearticle</th>
-              <th>thearticletitle</th>
-              <th>thearticletext</th>
-              <th>thearticledate</th>
-              <th>Modifier</th>
-              <th>Supprimer</th>
+  <table>
+    <thead>
+      <tr>
+        <th>idthearticle</th>
+        <th>thearticletitle</th>
+        <th>thearticletext</th>
+        <th>thearticledate</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
 
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          foreach ($thearticletext as $thearticle) {
-           ?>
-            <tr> 
-              <td><?= $thearticle["idthearticle"]?></td>
-              <td><?= $thearticle["thearticletitle"]?></td>
-              <td><?= $thearticle["thearticletext"]?></td>
-              <td><?= $thearticle["thearticledate"]?></td>
-              <td><?= $thearticle["thearticledesc"]?></td>
-              <td><a href="./?update=<?= $thearticle["idthearticle"] ?>"></a>Modifier</td>
-              <td><a href="./?delete=<?= $thearticle["idthearticle"] ?>"></a>>Supprimer</td>
-            </tr>
-          <?php
-          }
-          ?>
-        </tbody>
-      </table>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      foreach ($thearticleAll as $thearticle) {
+      ?>
+        <tr>
+          <td><?= $thearticle["idthearticle"] ?></td>
+          <td><?= $thearticle["thearticletitle"] ?></td>
+          <td><?= $thearticle["thearticletext"] ?></td>
+          <td><?= $thearticle["thearticledate"] ?></td>
+          <td><a href="./?update=<?= $thearticle["idthearticle"] ?>">Modifier</a></td>
+          <td><a href="./?delete=<?= $thearticle["idthearticle"] ?>">Supprimer</a></td>
+        </tr>
+      <?php
+      }
+      ?>
+    </tbody>
+  </table>
 
-  
+
 
   <?php
-   // }
+  // }
   include '../view/footer.php';
   ?>
