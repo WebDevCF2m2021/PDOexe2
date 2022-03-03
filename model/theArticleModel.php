@@ -85,9 +85,9 @@ function thearticleSelectOneById(PDO $db, int $id)
     $stmt = $db->prepare($queryA);
     try {
         $stmt->execute([$id]);
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        echo $e->getMessage();
+        //echo $e->getMessage();
         $result = [];
     }
     return $result;
