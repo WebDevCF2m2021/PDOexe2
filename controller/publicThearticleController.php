@@ -11,7 +11,6 @@ $sections = theSectionSelectAllNav($db);
 
 
 if (isset($_GET['connect'])) {
-
     if (isset($_POST["theuserLogin"]) && isset($_POST["theuserPwd"])) {
         if (connectionVerify($_POST["theuserLogin"], $_POST["theuserPwd"], ADMIN_LOG, ADMIN_PWD)) {
             header("Location: ./");
@@ -19,20 +18,10 @@ if (isset($_GET['connect'])) {
             $error = "Mot de passe ou login invalid!";
             require_once "../view/publicView/publicConnectView.php";
         }
-
     } else {
         require_once "../view/publicView/publicConnectView.php";
     }
- /**
- * Author View
- */
-}elseif(isset($_GET['idauteur'])){
-  
-  
-    require_once "../view/publicView/publicDetailAuteurView.php";
-  
-}
-/*Créer un routing publique quand la variable GET idauteur existe*/
+
     /**
      * publicDetailArticle
      * 
@@ -40,17 +29,22 @@ if (isset($_GET['connect'])) {
 } elseif (isset($_GET['idarticle'])) {
     require_once "../view/publicView/publicDetailArticle.php";
 
+    /**
+     * Author
+     * 
+     */
+} elseif (isset($_GET['idauteur'])) {
+    $id = (int) $_GET['idauteur'];
+    $articles = thearticleSelectAllByIduser($db, $id, 200);
+
+    require_once "../view/publicView/publicDetailAuteurView.php";
 
 
 
     /**
      * Public Homepage
      */
-}else {
+} else {
     $articles = thearticleSelectAll($db);
     require_once "../view/publicView/publicHomepageView.php";
-
-    
 }
-
-

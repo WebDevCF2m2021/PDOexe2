@@ -42,5 +42,67 @@
       </ul>
     </div>
   </div>
-</body>
-</html>
+  <div class="container mt-4">
+
+    <div class="page-header" id="banner">
+      <div class="row">
+        <div class="col-lg-8 col-md-7 col-sm-6">
+          <h1>Articles écris par XXX</h1>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container mt-4">
+    <?php
+    if (empty($articles)) :
+    ?>
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Cet auteur n'a pas encore écrit d'article</h2>
+          <hr>
+        </div>
+      </div>
+  </div>
+<?php
+    else :
+?>
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Nombre d'articles : <?= count($articles) ?></h2>
+      <hr>
+    </div>
+  </div>
+  </div>
+
+  <div class="container mx-30">
+    <?php
+      //var_dump($articles);
+      foreach ($articles as $article) {
+    ?>
+      <h2><?= $article["thearticletitle"] ?></h2>
+      <p><?= $article["thearticletext"] ?> <a href="?idarticle=<?= $article["idthearticle"] ?>">Lire la suite</a></p>
+      <p> <a href="?idauteur=<?= $article["idtheuser"] ?>"><?= $article["theusername"] ?></a></p>
+      <p><?= $article["thearticledate"] ?></p>
+      <p>
+        <?php
+        $artExp = explode("|||", $article["thesectiontitle"]);
+        $idExp = explode(",", $article["idthesection"]);
+        foreach ($artExp as $key => $value) {
+        ?>
+          <a href="?idsection=<?= $idExp[$key] ?>"><?= $value ?></a>
+        <?php
+        }
+        ?>
+      </p>
+    <?php
+      }
+    ?>
+  </div>
+<?php
+    endif;
+
+    include '../view/footer.php';
