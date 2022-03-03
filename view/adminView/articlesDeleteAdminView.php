@@ -37,26 +37,25 @@
 
   <div class="container">
 
-<div class="page-header" id="banner">
-    <div class="row">
+    <div class="page-header" id="banner">
+      <div class="row">
         <div class="col-lg-12 mx-auto">
 
-            <h1>Administration: Suppression de l'article</h1>
-            <p class="lead">Bienvenue <?= $_SESSION['theuserName'] ?>, vous êtes connectés en tant que <?= $_SESSION['therightName'] ?></p>
+          <h1>Administration: Suppression de l'article</h1>
 
-            <hr>
+          <hr>
 
-            <h3>Titre de l'article : <?= $article["thearticleTitle"] ?></h3>
-            <p><?= cuteTheText($article["thearticleText"], 500); ?></p>
-            <div class="alert alert-danger" role="alert">
-                Voulez-vous vraiment supprimer cette article ? <a href="?p=article&delete=<?= $article["idthearticle"] ?>&confirm">OUI</a> | <a href="?p=article">NON</a>
-            </div>
-           
+          <h3>Titre de l'article : <?= $article["thearticletitle"] ?></h3>
+          <p><?= $article["thearticletext"]; ?></p>
+          <div class="alert alert-danger" role="alert">
+            Voulez-vous vraiment supprimer cette article ? <a href="?delete=<?= $article["idthearticle"] ?>&confirm">OUI</a> | <a href="./">NON</a>
+          </div>
+
         </div>
 
+      </div>
     </div>
-</div>
- 
-  <?php
-  include '../view/footer.php';
-  ?>
+
+    <?php
+    include '../view/footer.php';
+    ?>

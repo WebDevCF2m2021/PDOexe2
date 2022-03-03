@@ -39,25 +39,21 @@ if (isset($_GET['add'])) {
     /**
      * Suppression - cruD
      */
-   } elseif (isset($_GET['delete']) && ctype_digit($_GET["delete"]) && !empty($_GET["delete"])) {
-   
-       $idarticle = ($_GET["delete"]);
-   
-       // si on a cliqué sur "confirmation"
-       if (isset($_GET['confirm'])) {
-           if (thearticleAdminDeleteById($dbConnect, $idarticle)) {
-               header("Location: ./?p=article&message=" . "Article ID $idarticle supprimé");
-           }
-       }
-   
-       $article = thearticleAdminSelectOneByIdForDelete($dbConnect, $idarticle);
-       if (is_null($article)) {
-           $error = "Article inexistant";
-           $recupSection = [];
-           require_once "../view/error404View.php";
-           die();
-       }
-       require_once "../view/adminView/articlesDeleteAdminView.php";
+} elseif (isset($_GET['delete']) && ctype_digit($_GET["delete"]) && !empty($_GET["delete"])) {
+
+    $idarticle = (int) $_GET["delete"];
+
+    // si on a cliqué sur "confirmation"
+    if (isset($_GET['confirm'])) {
+        if (thearticleAdminDeleteById($db, $idarticle)) {
+            header("Location: ./");
+            exit();
+        }
+    }
+
+    $article = thearticleSelectOneById($db, $idarticle);
+
+    require_once "../view/adminView/articlesDeleteAdminView.php";
 
 
     /**
