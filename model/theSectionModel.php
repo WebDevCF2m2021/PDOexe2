@@ -25,3 +25,4 @@ function thesectionSelectOneById(PDO $db, int $id)
     }
     return $result;
 }
+

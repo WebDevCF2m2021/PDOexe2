@@ -29,6 +29,15 @@ if (isset($_GET['connect'])) {
 } elseif (isset($_GET['idarticle'])) {
     require_once "../view/publicView/publicDetailArticle.php";
 
+    /**
+     * Author
+     * 
+     */
+} elseif (isset($_GET['idauteur'])) {
+    $id = (int) $_GET['idauteur'];
+    $articles = thearticleSelectAllByIduser($db, $id, 200);
+
+    require_once "../view/publicView/publicDetailAuteurView.php";
 
 
 
@@ -43,8 +52,3 @@ if (isset($_GET['connect'])) {
     $articles = thearticleSelectAll($db);
     require_once "../view/publicView/publicHomepageView.php";
 }
-
-
-/*
-
-*/
