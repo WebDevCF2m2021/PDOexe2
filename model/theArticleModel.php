@@ -166,3 +166,8 @@ function thearticleAdminSelectAll(PDO $db, int $substr = 200, int $limit = 20, i
     }
     return $result;
 }
+
+function thearticleAdminDeleteById(PDO $db, int $id): bool
+{
+    return false;
+}
