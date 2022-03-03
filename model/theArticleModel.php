@@ -134,7 +134,11 @@ function thearticleSelectAllByIdthesection(PDO $db, int $id, int $substr = 250, 
         ON a.idthearticle = ahs.thearticle_idthearticle
     INNER JOIN thesection s
         ON ahs.thesection_idthesection = s.idthesection
-    WHERE s.idthesection = ?
+    INNER JOIN thearticle_has_thesection ahs2
+        ON a.idthearticle = ahs2.thearticle_idthearticle
+    INNER JOIN thesection s2
+        ON ahs2.thesection_idthesection = s2.idthesection
+    WHERE s2.idthesection = ?
     GROUP BY a.idthearticle
     ORDER BY a.thearticledate DESC
     LIMIT $limit OFFSET $offset;";
