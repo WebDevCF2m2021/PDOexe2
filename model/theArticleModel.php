@@ -121,6 +121,35 @@ function thearticleInsert(PDO $db, string $title, string $text, int $user, array
     return true;
 }
 
+function thearticleSelectAllByIdthesection(PDO $db, int $id, int $substr = 250, int $limit = 20, int $offset = 0)
+{
+    $query = "SELECT 
+    a.idthearticle,a.thearticletitle, SUBSTR(a.thearticletext,1,$substr) as thearticletext,a.thearticledate, 
+    u.idtheuser,u.theusername,
+    GROUP_CONCAT(s.idthesection) AS idthesection, 
+    GROUP_CONCAT(s.thesectiontitle SEPARATOR '|||') AS thesectiontitle FROM thearticle a 
+    INNER JOIN theuser u
+        ON a.theuser_idtheuser = u.idtheuser
+    INNER JOIN thearticle_has_thesection ahs
+        ON a.idthearticle = ahs.thearticle_idthearticle
+    INNER JOIN thesection s
+        ON ahs.thesection_idthesection = s.idthesection
+    WHERE s.idthesection = ?
+    GROUP BY a.idthearticle
+    ORDER BY a.thearticledate DESC
+    LIMIT $limit OFFSET $offset;";
+    try {
+        $prepare = $db->prepare($query);
+        $prepare->bindParam(1, $id, PDO::PARAM_INT);
+        $prepare->execute();
+        $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+        $prepare->closeCursor();
+    } catch (Exception $e) {
+        $result = [];
+    }
+    return $result;
+}
+
 function thearticleAdminSelectAll(PDO $db, int $substr = 200, int $limit = 20, int $offset = 0)
 {
     $query = "SELECT 

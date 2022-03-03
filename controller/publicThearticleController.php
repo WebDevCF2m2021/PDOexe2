@@ -48,6 +48,10 @@ if (isset($_GET['connect'])) {
     /**
      * Public Homepage
      */
+} elseif (isset($_GET['idsection'])) {
+    $sectionSelected = thesectionSelectOneById($db, $_GET['idsection']);
+    $articleForSection = thearticleSelectAllByIdthesection($db, $_GET['idsection']);
+    require_once "../view/publicView/publicDetailSection.php";
 } else {
     $articles = thearticleSelectAll($db);
     require_once "../view/publicView/publicHomepageView.php";
