@@ -27,6 +27,8 @@ if (isset($_GET['connect'])) {
      * 
      */
 } elseif (isset($_GET['idarticle'])) {
+    $id = (int) $_GET['idarticle'];
+    $article = thearticleSelectOneById($db, $id);
     require_once "../view/publicView/publicDetailArticle.php";
 
     /**
@@ -35,6 +37,8 @@ if (isset($_GET['connect'])) {
      */
 } elseif (isset($_GET['idauteur'])) {
     $id = (int) $_GET['idauteur'];
+
+    $auteur = theuserSelectOneById($db, $id);
     $articles = thearticleSelectAllByIduser($db, $id, 200);
 
     require_once "../view/publicView/publicDetailAuteurView.php";
