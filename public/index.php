@@ -8,6 +8,8 @@ require_once "../model/theuserModel.php";
 require_once "../model/connectionModel.php";
 require_once "../model/theSectionModel.php";
 require_once "../model/theArticleModel.php";
+/*Charger le modèle sur le CF*/
+require_once "../model/theuserModel.php";
 
 
 /**
@@ -23,6 +25,7 @@ try {
 }
 
 
+//var_dump (thearticleSelectOneById($db,15));
 //var_dump(theSectionSelectAllNav($db));
 
 //var_dump(theuserSelectAll($db));
@@ -30,10 +33,10 @@ try {
 //var_dump(thearticleSelectAll($db));
 
 
+
 /**
  * Routeur
  */
-
 
 
 // require_once "../controller/" . (isset($_SESSION["id"]) && $_SESSION["id"] === session_id() ? "admin" : "public") . "ThearticleController.php";
@@ -44,3 +47,4 @@ if (isset($_SESSION["id"]) && $_SESSION["id"] === session_id()) {
 
     require_once "../controller/publicThearticleController.php";
 }
+

@@ -48,5 +48,6 @@ if (isset($_GET['add'])) {
 
     // pas de GET de routage    
 } else {
+    $thearticleAll = thearticleAdminSelectAll($db);
     require_once "../view/adminView/adminHomepageView.php";
 }
