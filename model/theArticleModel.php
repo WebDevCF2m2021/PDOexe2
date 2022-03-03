@@ -27,6 +27,7 @@ function thearticleSelectAll(PDO $db, int $substr = 250, int $limit = 20, int $o
 }
 
 
+
 // creation de fonction  'thearticleInsert'  
 function thearticleInsert(PDO $db, string $title, string $text, int $user, array $sections)
 {
@@ -53,3 +54,4 @@ function thearticleInsert(PDO $db, string $title, string $text, int $user, array
     }
     return true;
 }
+
