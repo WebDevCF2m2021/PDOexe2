@@ -12,3 +12,16 @@ function theSectionSelectAllNav(PDO $db)
     }
     return $result;
 }
+function thesectionSelectOneById(PDO $db, int $id)
+{
+    try {
+        $prepare = $db->prepare("SELECT * FROM thesection WHERE idthesection=?");
+        $prepare->bindParam(1, $id, PDO::PARAM_INT);
+        $prepare->execute();
+        $result = $prepare->fetch(PDO::FETCH_ASSOC);
+        $prepare->closeCursor();
+    } catch (Exception $e) {
+        return [];
+    }
+    return $result;
+}
